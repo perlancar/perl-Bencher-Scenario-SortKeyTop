@@ -13,7 +13,7 @@ our $scenario = {
         {
             name => 'sort',
             summary => "Perl's sort() builtin",
-            code_template=>'state $elems=<elems>; my @sorted = sort @$elems; splice @sorted, <n>',
+            code_template=>'state $elems=<elems>; my @sorted = sort { $a <=> $b } @$elems; splice @sorted, 0, <n>',
             result_is_list => 1,
         },
         {
